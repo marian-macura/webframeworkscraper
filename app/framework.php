@@ -12,29 +12,29 @@ $wresult=mysqli_query($conn,$fsql);
 $data=mysqli_fetch_assoc($wresult);
 $prom1=$data['total'];
            
-$bsql="select count(*) as boot from frm where framework='Bootstrap'";
+$bsql="select count(*) as boot from frm where framework='bootstrap'";
 $bresult=mysqli_query($conn,$bsql);
 $data=mysqli_fetch_assoc($bresult);
 $prom2=$data['boot'];
            
-$fousql="select count(*) as found from frm where framework='Foundation'";
+$fousql="select count(*) as found from frm where framework='foundation'";
 $fouresult=mysqli_query($conn,$fousql);
 $data=mysqli_fetch_assoc($fouresult);
 $prom3=$data['found'];
            
-$masql="select count(*) as mater from frm where framework='Materialize'";
+$masql="select count(*) as mater from frm where framework='materialize'";
 $maresult=mysqli_query($conn,$masql);
 $data=mysqli_fetch_assoc($maresult);
 $prom4=$data['mater'];
 
-$bulsql="select count(*) as bulma from frm where framework='Bulma'";
+$bulsql="select count(*) as bulma from frm where framework='bulma'";
 $bulresult=mysqli_query($conn,$bulsql);
 $data=mysqli_fetch_assoc($bulresult);
 $prom5=$data['bulma'];
 
 
 
-$nosql="select count(*) as nooo from frm where framework='Žádný nebo neznámý framework'";
+$nosql="select count(*) as nooo from frm where framework='N/A'";
 $noresult=mysqli_query($conn,$nosql);
 $data=mysqli_fetch_assoc($noresult);
 $prom6=$data['nooo'];
@@ -62,7 +62,7 @@ $prom6=$data['nooo'];
 
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
+                ['Framework', 'Využití'],
                 ['Bootstrap', parseInt(num)],
                 ['Foundation', parseInt(num2)],
                 ['Materialize', parseInt(num3)],
@@ -77,7 +77,7 @@ $prom6=$data['nooo'];
                 legend: {
                     position: 'right',
                     textStyle: {
-                        color: 'white',
+                        color: 'black',
                         fontSize: 16
                     }
                 },
@@ -92,7 +92,7 @@ $prom6=$data['nooo'];
 
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
@@ -113,28 +113,34 @@ $prom6=$data['nooo'];
 
     <div class="container">
         <div class="row">
-            <div class="col-6">
-
-
-                
-<p class="py-3">
-<?php  
-echo "<div class='statove'><span class='udaj-title'>"."Celkem testovaných webů: " . $prom1 ."<br>"."</span></div>";
-echo "<div class='statove'><span class='udaj-title'>"."Weby používající Boostrap: " . $prom2 ."<br>"."</span></div>";
-echo "<div class='statove'><span class='udaj-title'>"."Weby používající Foundation: " . $prom3 ."<br>"."</span></div>";        
-echo "<div class='statove'><span class='udaj-title'>"."Weby používající Materialize: " . $prom4 ."<br>"."</span></div>";  
-echo "<div class='statove'><span class='udaj-title'>"."Weby používající Bulma: " . $prom5 ."<br>"."</span></div>";          
-echo "<div class='statove'><span class='udaj-title'>"."Weby, které neobsahují tyto frameworky: " . $prom6 ."<br>"."</span></div>";       
-?>
-</p>
-
+            <div class="col-6 l-minus">
+                <div class="statistiky">
+                    <h3 class="center">Statistiky frameworků</h3>
+                    <hr>
+                    <p>Celkem testovaných webů: <?php echo "$prom1"?></p>
+                    <p>Weby používající Boostrap: <?php echo "$prom2"?><br>
+                        Weby používající Foundation: <?php echo "$prom3"?><br>
+                        Weby používající Materialize: <?php echo "$prom4"?><br>
+                        Weby používající Bulma: <?php echo "$prom5"?><br></p>
+                    <p>Weby, které neobsahují tyto frameworky: <?php echo "$prom6"?></p>
+                </div>
             </div>
-            <div class="col-6">
-                <div id="piechart_3d"></div>
+
+
+
+
+            <div class="col-6 r-minus">
+                <div class="statistiky">
+                    <h3 class="center">Graf rozdělení</h3>
+                    <hr>
+                    <div id="piechart_3d"></div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container white py-2">
+    <div class="container statistiky-table">
+        <h3 class="center">Tabulka záznamů v databázi</h3>
+        <hr>
         <table id="example" class="display table table-responsive table-sm">
             <thead class="table-light">
                 <tr>
@@ -170,7 +176,7 @@ echo "<div class='statove'><span class='udaj-title'>"."Weby, které neobsahují 
         </table>
 
     </div>
-
+    <div class="push"></div>
     <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" class="init">
@@ -180,4 +186,5 @@ echo "<div class='statove'><span class='udaj-title'>"."Weby, které neobsahují 
 
     </script>
 </body>
+
 </html>
