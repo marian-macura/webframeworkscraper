@@ -14,6 +14,8 @@ if ($conn->connect_error) {die("Connection failed: " . $conn->connect_error);}?>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/092029466e.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Statistiky frameworků</title>
 </head>
 
 <body>
@@ -35,11 +37,14 @@ $fo = 'foundation';
 $mat = 'materialize'; 
 $bu = 'bulma';               
     
-    
+$http = 'http://';
 
 $uname = $_POST["name"];
+            
+/* Kontrola jestli url obsahuje http */if (str_starts_with($uname, 'http')) {} else {$uname= $http.$uname;}
+            
 include('simple_html_dom.php');
-$html = file_get_html($_POST["name"]);
+$html = file_get_html($uname);
 
 $css ="";
 $jss ="";       
@@ -90,10 +95,7 @@ foreach($dtml->getElementsByTagName('link') as $a) {
         elseif 
             (str_contains($css, $bu)){$countBulma++;} elseif (str_contains($dss, $bu)) {$countBulma++;};   
         
-}       
-}
-        
-        
+}}       
         }
         
 
@@ -120,7 +122,6 @@ foreach($JSdtml->getElementsByTagName('script') as $a) {
         (str_contains($js, $bu)){$countBulma++;} elseif (str_contains($jjs, $bu)) {$countBulma++;};   
         
 }}
-    
  }    
 
     
@@ -128,15 +129,7 @@ foreach($JSdtml->getElementsByTagName('script') as $a) {
 if(is_null($title)){$title = "Nepodařilo se zjistit název stránky";}
 print " <center><span class='udaj-title'>" . $title . "</span></center>";
    
-
-
-
-
 if ($countBootstrap>0) {$framework = $bo;}elseif ($countFoundation>0)  {$framework = $fo;} elseif ($countMaterialize>0)  {$framework = $mat;} elseif ($countBulma>0)  {$framework = $bu;} else {$framework ="N/A";}
-
-    
-
-    
     
 $sql = "INSERT INTO frm (title, url, framework)
 VALUES ('$title', '$uname', '$framework')";
