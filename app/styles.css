@@ -1,0 +1,329 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap");
+/*Zástupný text na hlavní stránce*/
+::-webkit-input-placeholder {
+  color: black;
+  opacity: .3;
+}
+:-ms-input-placeholder {
+  color: black;
+  opacity: .3;
+}
+::-ms-input-placeholder {
+  color: black;
+  opacity: .3;
+}
+::placeholder {
+  color: black;
+  opacity: .3;
+}
+
+html {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #DADDD8;
+  position: relative;
+  margin: 0;
+  margin-bottom: -1em;
+  min-height: 100%;
+}
+
+.urlform {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 0;
+}
+
+.adresa input[type=text] {
+  width: 80%;
+  background: #FAFAFF;
+  border: 0;
+  padding-left: 1em;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.adresa input[type=text]:focus {
+  outline: 0;
+  background-color: #fcfcfc;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+.adresa button {
+  background: #ef3f5a;
+  border: 1px solid #ef3f5a;
+  color: #fff;
+  padding: 0 30px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.adresa button:hover {
+  background: #d73851;
+  border: 1px solid #d73851;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70vw;
+  -webkit-box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2);
+  line-height: 3em;
+}
+
+input[type=text] {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.text-form {
+  color: #1c1c1cd8;
+  text-align: center;
+}
+
+.text-form-framework {
+  color: #1c1c1cd8;
+  padding-top: .5em;
+  text-align: center;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 2em;
+  text-align: center;
+  color: #1c1c1cd8;
+}
+
+.udaje {
+  padding-left: 5em;
+  padding-right: 5em;
+  max-height: 10vh;
+}
+
+.udaj-title {
+  padding-top: 1em;
+  padding-bottom: 2em;
+  text-align: center;
+  color: black;
+}
+
+.udaj-vypis {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: black;
+}
+
+.vys {
+  padding-top: 2em;
+}
+
+.back {
+  margin: 1em;
+  font-size: 2.2em;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  top: 0;
+  color: #ef3f5a;
+  cursor: pointer;
+  border: 0;
+  outline: 0 !important;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  float: left;
+}
+
+.back:hover {
+  color: #d73851 !important;
+}
+
+.prehled {
+  background: #ef3f5a;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  padding: 1.2em;
+  width: 80%;
+  color: white;
+  float: right;
+  margin: 2em;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.prehled:hover {
+  background: #d73851;
+}
+
+.udaj-title-pad {
+  padding-top: 1em;
+}
+
+.white {
+  background-color: #eaeaea;
+  margin: 1em;
+}
+
+.statistiky {
+  background-color: #FAFAFF !important;
+  padding: 1em;
+  margin-top: 2em;
+  -webkit-box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.statistiky-table {
+  background-color: #FAFAFF !important;
+  padding: 2em 2em 2em 2em;
+  margin: auto;
+  margin-top: 2em;
+  -webkit-box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.center {
+  text-align: center;
+}
+
+.push {
+  padding-top: 1em;
+}
+
+.r-minus {
+  padding-right: 0 !important;
+}
+
+.l-minus {
+  padding-left: 0 !important;
+}
+
+.zprava-db {
+  position: absolute;
+  padding: 1em;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 0;
+  background-color: #fff !important;
+  -webkit-box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.zprava-info {
+  position: absolute;
+  padding: 1em;
+  top: 40%;
+  left: 50%;
+  height: 25em;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 0;
+  background-color: #fff !important;
+  -webkit-box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cont-vyber {
+  overflow: hidden;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+}
+
+.zprava-choose {
+  float: left;
+  margin: 1em;
+  padding: 1em;
+  width: 20em;
+  height: auto;
+  border: 0;
+  background-color: #FAFAFF !important;
+  -webkit-box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.text-black {
+  color: black;
+}
+
+.analyse {
+  margin-top: 1em;
+  background: #ef3f5a;
+  border: 1px solid #ef3f5a;
+  color: #fff;
+  padding: 1em;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.analyse:hover {
+  background: #d73851;
+  border: 1px solid #d73851;
+}
+
+.loader {
+  display: none;
+  top: 70%;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.loading {
+  border: 2px solid #ccc;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border-top-color: #ef3f5a;
+  border-left-color: #ef3f5a;
+  -webkit-animation: spin 1s infinite ease-in;
+          animation: spin 1s infinite ease-in;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=styles.css.map */
